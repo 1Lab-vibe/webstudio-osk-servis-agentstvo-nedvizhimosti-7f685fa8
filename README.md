@@ -1,2 +1,3 @@
-# webstudio-osk-servis-agentstvo-nedvizhimosti-7f685fa8
-Web Studio landing for ОСК-СЕРВИС, агентство недвижимости
+# Welcome to your Lovable project
+
+TODO: Document your project here
