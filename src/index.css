@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    --background: 222 33% 9%;
+    --foreground: 210 17% 97%;
+
+    --surface: 222 28% 13%;
+    --card: 222 28% 13%;
+    --card-foreground: 210 17% 97%;
+
+    --popover: 222 28% 13%;
+    --popover-foreground: 210 17% 97%;
+
+    --primary: 38 51% 58%;
+    --primary-foreground: 222 33% 9%;
+
+    --secondary: 222 22% 18%;
+    --secondary-foreground: 210 17% 97%;
+
+    --muted: 222 20% 16%;
+    --muted-foreground: 215 15% 68%;
+
+    --accent: 213 100% 75%;
+    --accent-foreground: 222 33% 9%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 210 17% 97%;
+
+    --border: 222 20% 22%;
+    --input: 222 20% 18%;
+    --ring: 38 51% 58%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Manrope', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .text-gold { color: hsl(var(--primary)); }
+  .border-gold { border-color: hsl(var(--primary)); }
+  .bg-surface { background: hsl(var(--surface)); }
+  .container-tight { @apply max-w-6xl mx-auto px-5 sm:px-8; }
+  .hairline { border-color: hsl(var(--border)); }
+  .gold-underline {
+    background-image: linear-gradient(hsl(var(--primary)), hsl(var(--primary)));
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+  }
+  .draw-path {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    animation: draw 3s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes pulseDot {
+  0%, 100% { opacity: 0.3; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+.dot-pulse { animation: pulseDot 2.4s ease-in-out infinite; transform-origin: center; }
